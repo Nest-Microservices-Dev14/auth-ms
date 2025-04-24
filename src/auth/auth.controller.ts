@@ -11,21 +11,17 @@ export class AuthController {
 
     @MessagePattern('auth.register.user')
     register(@Payload() registerUserDto: RegisterUserDto) {
-        return {
-            ...registerUserDto
-        }
+        return this.authService.registerUser(registerUserDto);
     }
 
     @MessagePattern('auth.login.user')
     login(@Payload() loginUserDto: LoginUserDto) {
-        return {
-            ...loginUserDto
-        }
+        return this.authService.loginUser(loginUserDto);
     }
 
     @MessagePattern('auth.verify.user')
-    verify() {
-        return 'verify!!'
+    verify(@Payload() token: string ) {
+        return this.authService.verifyToken(token);
     }
 
 }
