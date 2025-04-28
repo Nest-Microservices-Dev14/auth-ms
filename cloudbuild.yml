@@ -16,3 +16,5 @@ steps:
         "push",
         "northamerica-south1-docker.pkg.dev/tienda-microservices-458215/image-registry/auth-ms-prod",
       ]
+options:
+  logging: CLOUD_LOGGING_ONLY
